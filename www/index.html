@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Color Contrast Matrix</title>
+    <link rel="stylesheet" href="styles/vendor/reset.css">
+    <link rel="stylesheet" href="styles/index.css">
+  </head>
+
+  <body>
+    <div class="content">
+      <header>
+        <h1>Color Contrast Matrix</h1>
+      </header>
+
+      <div class="form-row">
+        <form
+          id="colorSelectionForm"
+          name="colorSelectionForm"
+        >
+          <label for="colorPicker" class="sr-only">Pick a Color</label>
+          <label for="colorValueInput">Enter One or Multiple Color(s)</label>
+          <input
+            id="colorPicker"
+            type="color"
+          >
+          <input
+            id="colorValueInput"
+            type="text"
+            class="color-value-input"
+            placeholder="ex.: #000000"
+          >
+          <button class="add-colors-buttons" type="submit">Add</button>
+          <details>
+            <summary>Instructions</summary>
+            <p>Select a color from the color picker (left) or enter a hexadecimal color in the input field.</p>
+            <ul>
+              <li>Ensure to enter 6-character hexadecimal values, prefixed with a "<cite>#</cite>".</li>
+              <li>Comma-separated lists are accepted.</li>
+              <li>Duplicate or invalid entries will be removed.</li>
+            </ul>
+          </details>
+        </form>
+      </div>
+
+      <div
+        id="colorTagsRow"
+        class="form-row"
+        role="region"
+        aria-live="polite"
+      >
+        <label for="colorTags">Colors to Compare</label>
+        <div id="colorTags"></div>
+      </div>
+
+      <div
+        id="tableRow"
+        class="form-row"
+        role="region"
+        aria-live="polite"
+      >
+        <table id="colorMatrix"></table>
+        <button
+          id="updateTableButton"
+          type="button"
+          class="update-table-button"
+        >Compare Colors</button>
+        <button
+          id="clearTableButton"
+          type="button"
+          class="clear-table-button"
+        >Clear Comparison</button>
+      </div>
+
+      <div>
+        <h2>About</h2>
+        <p>This tool was created to help designers and developers compare multiple colors for contrast at the same time.</p>
+        <p><a href="https://webaim.org/resources/contrastchecker/">WebAIM's Contrast Checker</a> is a great tool if you wish to only compare two colors. However, styleguides tend to define many colors, and experience showed that designers do not take the time to check them all one by one for contrast.</p>
+        <p>This tool was built in order to make accessibility considerations a habit for designers. When a tool is easier to use, it's more likely to be adopted, and eventually create a habit.</p>
+      </div>
+
+      <footer>
+        <p class="heading">Color Contrast Matrix</p>
+        <p>Created by <a href="https://jansensan.net/">Mat Janson Blanchet</a>.</p>
+        <p>Inspired by <a href="https://webaim.org/resources/contrastchecker/">WebAIM's Contrast Checker</a>.</p>
+      </footer>
+
+    </div>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>

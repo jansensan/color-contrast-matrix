@@ -1,0 +1,283 @@
+/* vars */
+:root {
+  /* colors */
+  --pureWhite: #ffffff;
+  --white: #f8f8f8;
+  --darkGrey: #363636;
+  --black: #141414;
+  --main: #324ecb;
+  --lightGreen: #f4fdf4;
+  --lightRed: #fdf2f2;
+  /* layout */
+  --tableBorder: 1px solid var(--black);
+  --borderRadius: 10px;
+}
+
+
+/* html-wide rules */
+html, body {
+  background-color: var(--white);
+  color: var(--black);
+  font-family: sans-serif;
+  font-size: 12pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 20pt;
+  border-bottom: 1px solid var(--darkGrey);
+}
+
+h2 {
+  font-size: 12pt;
+  border-bottom: 1px solid var(--darkGrey);
+}
+
+a {
+  color: var(--main);
+}
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  font-size: 12pt;
+  color: var(--black);
+  margin: 10px 0;
+  line-height: 16pt;
+}
+
+ul {
+  list-style: unset;
+  margin-left: 25px;
+}
+
+ul li {
+  margin: 5px 0;
+}
+
+label {
+  display: block;
+  font-size: 10pt;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+input[type="text"] {
+  display: inline-block;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  line-height: 38px;
+  padding: 0 10px;
+  font-size: 12pt;
+}
+input[type="text"]:focus {
+  background-color: var(--pureWhite);
+}
+input[type="text"]::placeholder {
+  opacity: 1;
+  color: #666;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  border-color: var(--black);
+  border-image: initial;
+  border-style: solid;
+  border-width: 1px;
+  cursor: default;
+  display: inline-block;
+  height: 40px;
+  outline: none;
+  padding: 0;
+  width: 40px;
+}
+
+button {
+  background-color: var(--black);
+  border: 0;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 12pt;
+  height: 40px;
+  padding: 0 20px;
+}
+
+table {
+  border-right: var(--tableBorder);
+  border-top: var(--tableBorder);
+  width: 100%;
+}
+
+tr {
+  border-bottom: var(--tableBorder);
+}
+
+th, td {
+  border-left: var(--tableBorder);
+  line-height: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+details {
+  margin: 10px 0;
+  display: block;
+}
+
+details summary {
+  cursor: pointer;
+}
+
+header {
+  margin-bottom: 50px;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 25px 0;
+}
+
+footer .heading {
+  font-size: 12pt;
+  font-weight: bold;
+  border-bottom: 1px solid var(--darkGrey);
+}
+
+footer p {
+  font-size: 10pt;
+}
+
+
+/* layout elements */
+.content {
+  width: 800px;
+  margin: 50px auto;
+}
+
+.form-row {
+  display: block;
+  margin: 50px 0;
+}
+
+.form-row input {
+  margin-right: 5px;
+  vertical-align: top;
+}
+
+.color-value-input {
+  width: calc(100% - 190px);
+}
+
+.add-colors-buttons {
+  width: 100px;
+}
+
+.color-block {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--white);
+  margin-right: 5px;
+}
+
+.color-label {
+  font-family: monospace;
+  font-size: 10pt;
+  line-height: 1;
+  vertical-align: baseline;
+}
+
+.color-tag {
+  background-color: var(--darkGrey);
+  border-radius: var(--borderRadius);
+  color: var(--white);
+  display: inline-block;
+  font-family: monospace;
+  font-size: 10pt;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.color-tag .close-button {
+  background-color: transparent;
+  border-radius: 100%;
+  border: 0;
+  color: var(--white);
+  display: inline-block;
+  height: 20px;
+  line-height: 1;
+  margin: 0 0 0 10px;
+  padding: 0;
+  width: 20px;
+}
+
+.color-tag .close-button:hover,
+.color-tag .close-button:focus {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.table-caption {
+  font-size: 10pt;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.table-header-cell {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.valid-cell {
+  background-color: var(--lightGreen);
+}
+
+.invalid-cell {
+  background-color: var(--lightRed);
+}
+
+.contrast-ratio-results {
+  font-weight: bold;
+  font-size: 14pt;
+}
+
+.webaim-link {
+  display: inline-block;
+  font-size: 10pt;
+  line-height: 1;
+}
+
+.clear-table-button {
+  margin: 25px 0;
+}
+
+
+/* global */
+:focus {
+  border-color: var(--main) !important;
+  box-shadow: 0 0 0 2.5pt var(--main) !important;
+  outline: 0 !important;
+  transition: box-shadow 0s linear !important;
+}
+
+.hidden {
+  display: none;
+}
+
+.sr-only {
+  position: absolute;
+  border: 0;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  font-size: 0;;
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  width: 1px;
+}
