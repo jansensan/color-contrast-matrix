@@ -249,6 +249,10 @@ footer p {
   color: #333333;
 }
 
+.grey-cell .validation-icon {
+  display: none;
+}
+
 .contrast-ratio-results {
   font-weight: bold;
   font-size: 14pt;
