@@ -68,14 +68,11 @@ label {
 
 input[type="text"] {
   display: inline-block;
-  background-color: var(--white);
+  background-color: var(--pureWhite);
   border: 1px solid var(--black);
   line-height: 38px;
   padding: 0 10px;
   font-size: 12pt;
-}
-input[type="text"]:focus {
-  background-color: var(--pureWhite);
 }
 input[type="text"]::placeholder {
   opacity: 1;
