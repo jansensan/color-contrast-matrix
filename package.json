@@ -1,10 +1,7 @@
 {
   "name": "color-contrast-matrix",
-  "description": "A small app to quickly compare colors' contrasts in a matrix",
-  "version": "0.0.1",
-  "author": "",
-  "license": "UNLICENSED",
-  "dependencies": {
-    "react-tag-input": "^6.4.3"
-  }
+  "description": "A tool to compare multiple color contrasts",
+  "author": "Mat Janson Blanchet <mat.jb@jansensan.net>",
+  "license": "MIT",
+  "version": "1.0.0"
 }
