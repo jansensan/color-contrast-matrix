@@ -257,6 +257,7 @@ function generateTable() {
       ratioParagraph.innerHTML = formatRatio(ratio);
 
       const validationParagraph = document.createElement('p');
+      validationParagraph.classList = 'validation-icon';
       if (aaValidation) {
         validationParagraph.innerHTML = '✔️';
       } else {
@@ -270,10 +271,14 @@ function generateTable() {
 
       // build cell
       const td = document.createElement('td');
-      if (aaValidation) {
-        td.classList = 'valid-cell';
+      if (ratio === 1) {
+        td.classList = 'grey-cell';
       } else {
-        td.classList = 'invalid-cell';
+        if (aaValidation) {
+          td.classList = 'valid-cell';
+        } else {
+          td.classList = 'invalid-cell';
+        }
       }
       td.appendChild(ratioParagraph);
       td.appendChild(validationParagraph);

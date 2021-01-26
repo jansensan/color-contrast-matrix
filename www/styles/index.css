@@ -239,6 +239,15 @@ footer p {
   background-color: var(--lightRed);
 }
 
+.grey-cell {
+  background-color: #cccccc;
+}
+
+.grey-cell .contrast-ratio-results,
+.grey-cell .webaim-link {
+  color: #333333;
+}
+
 .contrast-ratio-results {
   font-weight: bold;
   font-size: 14pt;
