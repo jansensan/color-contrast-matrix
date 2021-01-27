@@ -1,7 +1,0 @@
-{
-  "name": "color-contrast-matrix",
-  "description": "A tool to compare multiple color contrasts",
-  "author": "Mat Janson Blanchet <mat.jb@jansensan.net>",
-  "license": "MIT",
-  "version": "1.0.0"
-}
