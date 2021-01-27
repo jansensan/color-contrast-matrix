@@ -25,11 +25,11 @@ let colorMatrix;
 let colorPicker;
 let colorSelectionForm;
 let colorTags;
-let colorValueInput;
-let updateTableButton;
 let colorTagsRow;
-let tableRow;
+let colorValueInput;
+let compareColorsButton;
 let tableCaption;
+let tableRow;
 
 let colorList = [];
 
@@ -61,7 +61,7 @@ function getDOMElements() {
   colorTagsRow = document.getElementById('colorTagsRow');
   colorValueInput = document.getElementById('colorValueInput');
   tableRow = document.getElementById('tableRow');
-  updateTableButton = document.getElementById('updateTableButton');
+  compareColorsButton = document.getElementById('compareColorsButton');
 }
 
 function addEventListeners() {
@@ -106,7 +106,7 @@ function addEventListeners() {
   );
 
   // table
-  updateTableButton.addEventListener(
+  compareColorsButton.addEventListener(
     'click',
     event => {
       generateTable();
@@ -316,7 +316,7 @@ function updateLayout() {
   isUpdateTableVisible = colorList.length > 1;
 
   toggleVisibility(colorTagsRow, areColorsTagsVisible);
-  toggleVisibility(updateTableButton, isUpdateTableVisible);
+  toggleVisibility(compareColorsButton, isUpdateTableVisible);
   toggleVisibility(clearTableButton, isClearTableVisible);
 }
 

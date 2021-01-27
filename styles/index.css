@@ -220,6 +220,10 @@ footer p {
   color: var(--black);
 }
 
+.compare-colors-button {
+  margin-top: 25px;
+}
+
 .table-caption {
   font-size: 10pt;
   font-weight: bold;

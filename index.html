@@ -24,7 +24,7 @@
         <h1>Color Contrast Matrix</h1>
       </header>
 
-      <div class="form-row">
+      <div class="form-row color-input">
         <form
           id="colorSelectionForm"
           name="colorSelectionForm"
@@ -62,6 +62,11 @@
       >
         <label for="colorTags">Colors to Compare</label>
         <div id="colorTags"></div>
+        <button
+          id="compareColorsButton"
+          type="button"
+          class="compare-colors-button"
+        >Compare</button>
       </div>
 
       <div
@@ -72,18 +77,13 @@
       >
         <table id="colorMatrix"></table>
         <button
-          id="updateTableButton"
-          type="button"
-          class="update-table-button"
-        >Compare Colors</button>
-        <button
           id="clearTableButton"
           type="button"
           class="clear-table-button"
-        >Clear Comparison</button>
+        >Clear</button>
       </div>
 
-      <div>
+      <div class="about">
         <h2>About</h2>
         <p>This tool was created to help designers and developers compare multiple colors for contrast at the same time.</p>
         <p><a href="https://webaim.org/resources/contrastchecker/">WebAIM's Contrast Checker</a> is a great tool if you wish to only compare two colors. However, styleguides tend to define many colors, and experience showed that designers do not take the time to check them all one by one for contrast.</p>
@@ -96,7 +96,6 @@
         <p>Inspired by <a href="https://webaim.org/resources/contrastchecker/">WebAIM's Contrast Checker</a>.</p>
         <p>Source code <a href="https://github.com/jansensan/color-contrast-matrix">available on GitHub</a>.</p>
       </footer>
-
     </div>
     <script src="./scripts/index.js"></script>
   </body>
