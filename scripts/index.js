@@ -28,6 +28,7 @@ let colorTags;
 let colorTagsRow;
 let colorValueInput;
 let compareColorsButton;
+let permalinkContainer;
 let tableCaption;
 let tableRow;
 
@@ -49,6 +50,7 @@ function init() {
 
   getDOMElements();
   addEventListeners();
+  parseURL();
   updateLayout();
 }
 
@@ -60,8 +62,9 @@ function getDOMElements() {
   colorTags = document.getElementById('colorTags');
   colorTagsRow = document.getElementById('colorTagsRow');
   colorValueInput = document.getElementById('colorValueInput');
-  tableRow = document.getElementById('tableRow');
   compareColorsButton = document.getElementById('compareColorsButton');
+  permalinkContainer = document.getElementById('permalinkContainer');
+  tableRow = document.getElementById('tableRow');
 }
 
 function addEventListeners() {
@@ -105,24 +108,6 @@ function addEventListeners() {
     }
   );
 
-  // table
-  compareColorsButton.addEventListener(
-    'click',
-    event => {
-      generateTable();
-      isClearTableVisible = true;
-      updateLayout();
-    }
-  );
-  clearTableButton.addEventListener(
-    'click',
-    event => {
-      colorMatrix.innerHTML = '';
-      isClearTableVisible = false;
-      updateLayout();
-    }
-  );
-
   // color tags
   document.body.addEventListener(
     'click',
@@ -142,7 +127,55 @@ function addEventListeners() {
         }
       }
     }
-  )
+  );
+  compareColorsButton.addEventListener(
+    'click',
+    event => {
+      generateTable();
+      generatePermalink();
+      isClearTableVisible = true;
+      updateLayout();
+    }
+  );
+
+  // table
+  clearTableButton.addEventListener(
+    'click',
+    event => {
+      colorMatrix.innerHTML = '';
+      permalinkContainer.innerHTML = '';
+      isClearTableVisible = false;
+      updateLayout();
+    }
+  );
+}
+
+function parseURL() {
+  const { search } = document.location;
+  if (!search) {
+    return;
+  }
+
+  const params = new URLSearchParams(search);
+  if (!params) {
+    return;
+  }
+
+  const colors = params.get('c');
+  if (!colors) {
+    return;
+  }
+
+  const list = colors.split(',');
+  for (let i = 0; i < list.length; i++) {
+    const hex = `#${list[i]}`;
+    list[i] = hex;
+  }
+  colorList = list;
+  colorList = sanitizeColorList(colorList);
+  colorList.sort();
+
+  updateColorTags(colorList);
 }
 
 
@@ -187,6 +220,17 @@ function createWebAimLink(background, foreground) {
   link.target = '_blank';
   link.innerHTML = 'WebAIM\'s results';
   return link;
+}
+
+function generatePermalink() {
+  let listString = colorList.join(',');
+  listString = listString.replace(/#/g, '');
+
+  const link = document.createElement('a');
+  link.href = `https://jansensan.github.io/color-contrast-matrix/?c=${listString}`;
+  link.innerHTML = 'Permalink';
+
+  permalinkContainer.appendChild(link);
 }
 
 function generateTable() {

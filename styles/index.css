@@ -268,8 +268,14 @@ footer p {
   line-height: 1;
 }
 
+.permalink-container {
+  font-size: 10pt;
+  margin: 10px 0;
+  text-align: center;
+}
+
 .clear-table-button {
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
 
